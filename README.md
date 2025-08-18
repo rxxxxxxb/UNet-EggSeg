@@ -1,4 +1,4 @@
-# Egg MRI Segmentation (Single-Case Overfit)
+# Egg MRI Segmentation
 
 This project provides Jupyter notebook pipeline for training and validating a 3D U-Net segmentation model on a single egg MRI scan. The model learns to segment three foreground classes: egg white, yolk, and air pocket against background.
 
@@ -9,12 +9,14 @@ The goal is to deliberately overfit one scan as a sanity check before scaling to
 ### Why Overfit One Case?
 
 - Pipeline validation – quickly verifies data handling, transforms, and loss calculations.
-
 - Capacity check – ensures the model can drive loss near zero before scaling up.
-
 - Hyperparameter scaffolding – provides stable defaults for learning rate, loss weighting, and augmentation.
-
 - Class coverage – guarantees the model learns to represent all egg structures, including small air pockets.
+
+
+## Dataset 
+- The dataset consists of a single 3D MRI scan of an egg.
+- A label map was manually annotated in 3D Slicer (approximate segmentation).
 
 ## Features
 
