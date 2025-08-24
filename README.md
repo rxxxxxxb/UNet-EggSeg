@@ -29,10 +29,11 @@ Intensity normalization (percentile scaling + z-score)
 
 ### Training
 
-- 3D U-Net (1 input channel, 4 output classes)
-- Loss: Dice + weighted cross-entropy (handles class imbalance)
-- Class-balanced patch sampling (ensures yolk/air coverage)
-- Mixed precision training with AdamW optimizer
+- 3D U-Net `(monai.networks.nets.UNet, 1 input channel, 4 output classes)`.
+- Loss: Dice + weighted cross-entropy via `monai.losses.DiceCELos`s to handle class imbalance.
+- Class-balanced patch sampling with MONAI’s dataset utilities. (ensures yolk/air coverage)
+- Mixed precision training using the AdamW optimizer and MONAI AMP support.
+- Data preprocessing/augmentation with MONAI transforms (normalization, affine, flips).
 
 ### Inference & Postprocessing
 
